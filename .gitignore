@@ -1,0 +1,67 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Compiled extensions
+*.so
+
+# Virtual environments
+.env
+.venv
+venv/
+ENV/
+env/
+pip-wheel-metadata/
+pip-log.txt
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+develop-eggs/
+
+# Logs
+*.log
+logs/
+
+# Test and coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+pytestdebug.log
+coverage.xml
+*.cover
+.hypothesis/
+
+# Type checking
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# IDE/editor
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary/output directories
+outputs/
+tmp/
+temp/

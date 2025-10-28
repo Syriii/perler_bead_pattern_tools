@@ -15,6 +15,16 @@ class ColorUtils:
         self._color_cache = {}  # 颜色匹配缓存
         
     @staticmethod
+    def normalize_hex(hex_color: str) -> str:
+        """标准化十六进制颜色字符串，确保以#开头"""
+        if not hex_color:
+            return '#FFFFFF'
+        c = str(hex_color).strip()
+        if not c.startswith('#'):
+            c = f'#{c}'
+        return c
+
+    @staticmethod
     def hex_to_rgb(hex_color: str) -> Tuple[int, int, int]:
         """将十六进制颜色转换为RGB"""
         hex_color = hex_color.lstrip('#')

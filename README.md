@@ -43,6 +43,8 @@ streamlit run app.py
 streamlit run app.py --server.port 8502
 ```
 
+提示：本项目采用 Streamlit 多页面结构，主入口为欢迎页，`pages/generator.py` 为生成拼豆图案页面，`pages/mosaic_stats.py` 为马赛克颜色统计页面。可通过左侧页面导航或首页链接进入。
+
 ### 使用方法
 
 1. **上传图片**: 支持 PNG、JPG、JPEG、GIF、BMP 格式
@@ -97,6 +99,9 @@ perler_bead_pattern_tools/
 │   ├── slicer.py             # 图像切片器
 │   └── exporter.py           # 导出功能
 ├── app.py                     # Streamlit Web 应用
+├── pages/                     # Streamlit 多页面目录
+│   └── mosaic_stats.py        # 马赛克颜色统计页
+│   └── generator.py           # 生成拼豆图案页
 ├── requirements.txt           # 依赖包列表
 └── README.md                  # 项目说明
 ```
@@ -132,7 +137,7 @@ perler_bead_pattern_tools/
 
 ### 基本使用
 ```python
-from perler_bead_tool import ImageProcessor, ImageSlicer, PatternExporter
+from tools import ImageProcessor, ImageSlicer, PatternExporter
 
 # 创建图像处理器
 processor = ImageProcessor(palette_name="perler")

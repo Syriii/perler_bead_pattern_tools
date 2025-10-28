@@ -7,28 +7,16 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 
-from perler_bead_tool import (
+from tools import (
     ColorUtils,
     get_palette_names,
     get_palette_colors,
 )
 
-# 页面配置（仅本页）
-st.set_page_config(
-    page_title="马赛克统计",
-    page_icon="🧮",
-    layout="wide",
-)
+# 多页面应用中，页面配置在主 app.py 设置，避免重复调用
 
 
-def normalize_hex(hex_color: str) -> str:
-    """标准化十六进制颜色字符串，确保以#开头"""
-    if not hex_color:
-        return '#FFFFFF'
-    c = str(hex_color).strip()
-    if not c.startswith('#'):
-        c = f'#{c}'
-    return c
+    
 
 
 def main():
@@ -131,7 +119,7 @@ def main():
                     total_cells = sum(counts_global.values())
                     rows_html = []
                     for name, cnt in sorted(counts_global.items(), key=lambda kv: kv[1], reverse=True)[:20]:
-                        hex_color = normalize_hex(palette_colors.get(name, '#FFFFFF'))
+                        hex_color = ColorUtils.normalize_hex(palette_colors.get(name, '#FFFFFF'))
                         cell = (
                             f"<div style='display:flex;align-items:center;gap:8px'>"
                             f"<span style='display:inline-block;width:24px;height:24px;border:1px solid #ccc;background-color:{hex_color}'></span>"
